@@ -1,0 +1,3 @@
+{"pages":[{"title":"PC Gaming", "src":"./content/pc.json", "hash":"PCGaming", "content":[{"$type":"text", "innerHTML":"PC GAMING SECTION"}]},
+{"title":"Playstation 4 Gaming", "src":"./content/ps4.json","hash":"PS4Gaming", "content":[]}
+]}

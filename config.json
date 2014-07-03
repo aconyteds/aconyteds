@@ -1,0 +1,9 @@
+{
+   "title" :"Ian's Personal Website",
+   "themes":[{"name":"claro", "url":"//js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css", "default":false},
+	{"name":"tundra", "url":"//js.arcgis.com/3.8/js/dojo/dijit/themes/tundra/tundra.css", "default":true}],
+	"css":["//js.arcgis.com/3.8/js/esri/css/esri.css", "./_RESOURCES/CSS/base.css"],
+	"sections":[{"src":"./content/wedding.json", "title":"Wedding Info", "path":"Wedding"},
+	{"src":"./content/home.json", "title":"Home", "path":"Home"},
+	{"src":"./content/gaming.json", "title":"Gaming", "path":"Gaming"}]
+}

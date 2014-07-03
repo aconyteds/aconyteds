@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Loading...</title>
+        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.0/dojo/dojo.js" data-dojo-config="async: true, dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, '') +'/resources/blank.html',
+        packages: [ {
+            name: 'custom',
+            location: location.pathname.replace(/\/[^/]+$/, '') + '/_RESOURCES/_CUSTOM'
+        }]"></script>
+        <script src="./_RESOURCES/main.js"></script>
+        <style>html, body{height:100%; width:100%; padding:0; margin:0;}</style>
+    </head>
+    <body >
+        <div id="headerPane">
+            <div>
+                <div class="menuButtonContainer">
+                    <div id="menuPane"></div>
+                </div>
+                <span>SubTitle</span>
+            </div>
+        </div>
+        <div class="spacer">
+            <div id="mainContainer">
+                <div id="middlePane">
+                    <div id="leftPane"><span>left</span></div>
+                    <div id="contentPane" ><span>content</span></div>
+                    <div id="rightPane" ><span>right</span></div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="bottomPane">
+            <div>
+                <a href="emailto:ian@mail.com" target="_blank">Contact</a>
+                <a>About</a>
+                <a href="index.html" target="_self">Home</a>
+            </div>
+        </div>
+    </body>
+</html>

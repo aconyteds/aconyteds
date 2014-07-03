@@ -1,0 +1,35 @@
+//Body Styles
+@bodyBG:#000000;
+//Header Styles
+@headerBG:#000000;
+@headerText:#00F;
+@highlightColor:#00F;
+@hoverText:#3DC7F5;
+//Content Styles
+@contentBG:#D3F1F5;
+//Bottom Styles
+@bottomBG:#D3F1F5;
+//Text Styles
+@textColor:#000;
+@visitedColor:#A3BEC2;
+
+.middleGradient (@outer, @inner){
+    background: ~"@{inner}"; /* Old browsers */
+    background: -moz-linear-gradient(left, ~"@{outer}" 0%, ~"@{inner}" 50%, ~"@{outer}" 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,~"@{outer}"), color-stop(50%,~"@{inner}"), color-stop(100%,~"@{outer}")); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, ~"@{outer}" 0%,~"@{inner}" 50%,~"@{outer}" 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, ~"@{outer}" 0%,~"@{inner}" 50%,~"@{outer}" 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, ~"@{outer}" 0%,~"@{inner}" 50%,~"@{outer}" 100%); /* IE10+ */
+    background: linear-gradient(to right, ~"@{outer}" 0%,~"@{inner}" 50%,~"@{outer}" 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{outer}', endColorstr='@{outer}',GradientType=1 ); /* IE6-9 */
+}
+.fadient (@outer, @inner){
+    background: ~"@{inner}"; /* Old browsers */
+    background: -moz-linear-gradient(top, ~"@{outer}" 0%, ~"@{inner}" 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, top, bottom, color-stop(0%,~"@{outer}"),  color-stop(100%,~"@{inner}")); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, ~"@{outer}" 0%,~"@{inner}" 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, ~"@{outer}" 0%, ~"@{inner}" 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, ~"@{outer}" 0%,~"@{inner}" 100%); /* IE10+ */
+    background: linear-gradient(to bottom, ~"@{outer}" 0%,~"@{inner}" 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{outer}', endColorstr='@{inner}',GradientType=1 ); /* IE6-9 */
+}

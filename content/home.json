@@ -1,0 +1,5 @@
+{"pages":[{"title":"Welcome!", "hash":"home", "content":[
+        {"$type":"text", "innerHTML":"Welcome to my Home Page"}
+        ]}
+    ]
+}
