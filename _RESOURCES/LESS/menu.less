@@ -8,23 +8,31 @@
         height:100%;
     }
     ul.resMenu{
-        background:@headerBG;
-        color:@headerText;
+        color:@hoverText;
         text-align:left;
         padding-left:5px;
         margin:0;
         width:200px;
-        //visibility:hidden;
+        visibility:hidden;
+        font:menu;
         li{
+            -webkit-transition: box-shadow .25s ease; /* Safari and Chrome */
+            transition: box-shadow .25s ease;
+            background:@headerBG;
             list-style:none;
+            cursor:pointer;
             position:relative;
             left:-5px;
             line-height:25px;
             width:100%;
-            padding-left:5px;
-            border-bottom-width:1px;
-            border-bottom-style:solid;
-            border-bottom-color:@highlightColor;
+            padding: 3px 0 3px 5px;
+            border-width: 0  1px 1px 1px;
+            border-style:solid;
+            border-color:@highlightColor;
+            box-shadow: inset 0 10px 30px -6px @highlightColor;
+            -moz-box-shadow: inset 0 10px 30px -6px @highlightColor;
+            -webkit-box-shadow: inset 0 10px 30px -6px @highlightColor;
+            box-sizing: border-box;
             &>span.flyout{
                 position:absolute;
                 right:0;
@@ -39,13 +47,35 @@
                 &:focus+ul{visibility:visible;}
             }
             &:hover, &:focus{
-                //background:@highlightColor;
-                box-shadow:0 0 20px 3px @highlightColor inset;
+                background:@headerBG;
+                box-shadow: inset 0 -10px 15px -6px @headerText;
+                -moz-box-shadow: inset 0 -10px 15px -6px @headerText;
+                -webkit-box-shadow: inset 0 -10px 15px -6px @headerText;
+                padding-bottom: 1px;
+                border-bottom-width:3px;
+                border-bottom-color:@headerText;
+                border-left-color:@headerText;
+                &>span{
+                    color:@headerText;
+                    text-shadow:none;
+                    background: none;
+                    -webkit-background-clip: initial;
+                    -webkit-text-fill-color: initial;
+                }
                 color:@hoverText;
                 &>ul{visibility:visible;}
             }
             &>ul{visibility:hidden;position:absolute; top:0; left:100%;}
-            &>span{cursor:pointer;}
+            &>span{
+                white-space: nowrap;
+                font-weight:bold;
+                -webkit-transition: text-shadow .25s ease; /* Safari and Chrome */
+                transition: text-shadow .25s ease;
+                text-shadow: 0px 0px 10px @highlightColor;
+                background: -webkit-linear-gradient(  @hoverText, @headerText);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
         }
     }
 }

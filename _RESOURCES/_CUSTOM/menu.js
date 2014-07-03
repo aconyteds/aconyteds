@@ -21,9 +21,9 @@ function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Content
                             //console.log();
                             this.subMenu=new gfx.createSurface(domConstruct.create("span", {class:"flyout"},this.domNode), "25", "25");
                             this.subMenu.createPath('M2.021,9.748L2.021,9.748V9.746V9.748zM2.022,9.746l5.771,5.773l-5.772,5.771l2.122,2.123l7.894-7.895L4.143,7.623L2.022,9.746zM12.248,23.269h14.419V20.27H12.248V23.269zM16.583,17.019h10.084V14.02H16.583V17.019zM12.248,7.769v3.001h14.419V7.769H12.248z').setFill("inherit");
-                            console.log(this.subMenu);
+                            //console.log(this.subMenu);
                             //this.subMenu=domConstruct.place(domConstruct.create("svg", {class:"flyout", viewBox:"0 0 30 30", innerHTML:"<path d='M2.021,9.748L2.021,9.748V9.746V9.748zM2.022,9.746l5.771,5.773l-5.772,5.771l2.122,2.123l7.894-7.895L4.143,7.623L2.022,9.746zM12.248,23.269h14.419V20.27H12.248V23.269zM16.583,17.019h10.084V14.02H16.583V17.019zM12.248,7.769v3.001h14.419V7.769H12.248z'></path>"}), this.domNode);
-                            on(this.subMenu._parent, "click", lang.hitch(this.domNode, function(e){
+                            on(this.subMenu, "click", lang.hitch(this.domNode, function(e){
                                 e.stopPropagation();
                                 //console.log(this);
                                 focusUtil.focus(this);
@@ -32,7 +32,8 @@ function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Content
                     },
                     startup:function(){
                         //console.log(this);
-                        on(this.domNode, "click", lang.hitch(this, function(){
+                        on(this.domNode, "click", lang.hitch(this, function(e){
+                            e.stopPropagation();
                             this._select(this.page, this.hash);
                         }));
                         return this;
@@ -62,7 +63,7 @@ function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Content
                         }});
                     }
                     else{//Page only contains content, lowest node, no sub menu
-                        _button=new _menuButton({title:node.title, page:node.content, hash:node.hash, subMenu:false}).placeAt(_listMaster);
+                        _button=new _menuButton({title:node.title, page:node.content, hash:node.hash, subMenu:false}).placeAt(_listMaster);//TODO PARENT HASHING IE: PS4/THIEF
                         _button.startup();
                         mainMenu.hashes.push({hash:_button.hash, page:_button.page});
                     }
