@@ -66,25 +66,25 @@ body{
         display:inline-block;
         width:98%;
         min-height:calc(~'100% - 85px');
-        padding-top:50px;
-        padding-bottom:30px;
+        margin-top:50px;
+        margin-bottom:30px;
+        box-shadow:0 0 20px 3px @highlightColor inset;
+        background:@contentBG;
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%, rgba(0,0,255,0.4) 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(100%,rgba(0,0,255,0.4))); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#800000ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        border:1px solid black;
+        border-radius:20px;
+        box-sizing:border-box;
+        padding:10px;
         &>#mainContainer{
             min-height:100%;
             width:100%;
-            padding:0;
-            box-shadow:0 0 20px 3px @highlightColor inset;
-            background:@contentBG;
-            background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%, rgba(0,0,255,0.4) 100%); /* FF3.6+ */
-            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(100%,rgba(0,0,255,0.4))); /* Chrome,Safari4+ */
-            background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* Opera 12+ */
-            background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* IE10+ */
-            background: radial-gradient(ellipse at center,  rgba(0,0,0,0.1) 0%,rgba(0,0,255,0.4) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#800000ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-            border:1px solid black;
-            border-radius:20px;
-            box-sizing:border-box;
-            padding:10px;
+            
             &>div#middlePane{
                 display:table;
                 min-height:100%;
