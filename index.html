@@ -9,7 +9,7 @@
             location: location.pathname.replace(/\/[^/]+$/, '') + '/_RESOURCES/_CUSTOM'
         }]"></script>
         <script src="./_RESOURCES/main.js"></script>
-        <style>html, body{height:100%; width:100%; padding:0; margin:0; font-family:"Comic Sans MS", cursive, sans-serif;}</style>
+        <style>html, body{height:100%; width:100%; padding:0; margin:0;} #bottomPane{visibility:hidden;}</style>
     </head>
     <body >
         <div id="headerPane">
@@ -17,15 +17,15 @@
                 <div class="menuButtonContainer">
                     <div id="menuPane"></div>
                 </div>
-                <span>SubTitle</span>
+                <span id="subTitle">Loading...</span>
             </div>
         </div>
         <div class="spacer">
             <div id="mainContainer">
                 <div id="middlePane">
-                    <div id="leftPane"><span>left</span></div>
-                    <div id="contentPane" ><span>content</span></div>
-                    <div id="rightPane" ><span>right</span></div>
+                    <div id="leftPane"></div>
+                    <div id="contentPane" ></div>
+                    <div id="rightPane" ></div>
                 </div>
                 
             </div>

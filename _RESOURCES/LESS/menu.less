@@ -1,11 +1,10 @@
 @import "theme.less";
+@import "../font-awesome-4.1.0/less/font-awesome.less";
+
 .MenuNode{
-    &:hover>div>ul,&:focus>div>ul{visibility:visible;}
-    &>div{
-        position:absolute;
-        top:100%;
-        width:100%;
-        height:100%;
+    &:hover,&:focus{
+        &>div>ul{visibility:visible;opacity:1;}
+        &:before{color:@headerText;}
     }
     ul.resMenu{
         color:@hoverText;
@@ -15,6 +14,9 @@
         width:200px;
         visibility:hidden;
         font:menu;
+        -webkit-transition: visibility .5s ease, opacity .5s ease; /* Safari and Chrome */
+        transition: visibility .5s ease, opacity .5s ease;
+        opacity: 0;
         li{
             -webkit-transition: box-shadow .25s ease; /* Safari and Chrome */
             transition: box-shadow .25s ease;
@@ -40,11 +42,11 @@
                 height:25px;
                 width:25px;
                 display:inline-block;
-                &>svg>path{
-                    fill:@highlightColor;
-                    stroke:@highlightColor;
+                &:before{
+                    font-family: 'FontAwesome';
+                    padding-left:15px;
+                    content:@fa-var-angle-right;
                 }
-                &:focus+ul{visibility:visible;}
             }
             &:hover, &:focus{
                 background:@headerBG;
@@ -61,11 +63,14 @@
                     background: none;
                     -webkit-background-clip: initial;
                     -webkit-text-fill-color: initial;
+                    &.flyout:before{
+                        content:@fa-var-chevron-right;
+                    }
                 }
                 color:@hoverText;
-                &>ul{visibility:visible;}
+                &>ul{visibility:visible;opacity:1;}
             }
-            &>ul{visibility:hidden;position:absolute; top:0; left:100%;}
+            &>ul{position:absolute; top:0; left:100%;}
             &>span{
                 white-space: nowrap;
                 font-weight:bold;
