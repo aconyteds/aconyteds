@@ -1,18 +1,3 @@
+This is the Git hub page for Ian's Website. I will be documenting some of the features available within the API to keep followers up to date on what I am working on. I am adapting an AGILE approach to ensure that I stay on task as far as development goes.
 
-    ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team
+Currently the application is driven by Dojo and JSON. When a user routes to a given page, the application loads the content specified for that route within the JSON files and parses it into display nodes. Currently there is support for a few different types of content, but I plan on instituing the ability to reference a dojo template to allow for more customization.
