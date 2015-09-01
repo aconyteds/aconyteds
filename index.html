@@ -3,10 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title>Loading...</title>
-        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.0/dojo/dojo.js" data-dojo-config="async: true, dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, '') +'/resources/blank.html',
-        packages: [ {
+        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="isDebug:true,
+        async: true,
+        dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, '') +'/_RESOURCES/blank.html',
+        packages: [{
             name: 'custom',
             location: location.pathname.replace(/\/[^/]+$/, '') + '/_RESOURCES/_CUSTOM'
+        },{
+            name:'content',
+            location: location.pathname.replace(/\/[^/]+$/, '') + '/content'
+        },
+        {
+            name:'configs',
+            location: location.pathname.replace(/\/[^/]+$/, '') + '/configs'
         }]"></script>
         <script src="./_RESOURCES/main.js"></script>
         <style>html, body{height:100%; width:100%; padding:0; margin:0;} #bottomPane{visibility:hidden;}</style>

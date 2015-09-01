@@ -1,28 +1,44 @@
-require(["dojo/parser",'dojo/_base/xhr',"dojo/_base/array", "custom/imw", "dojo/dom-attr", "custom/menu", "dojo/_base/window", "dojo/on", "custom/hashes", "dojo/hash",  "dojo/domReady!"],
-function(parser, xhr, array, cImw, domAttr, cMenu,  win, on, cHashes, hash){
-    parser.parse();
-    xhr.get({url:"config.json", handleAs:"json",load: function(data)
-	{
-        document.title=data.title;
-		array.map(data.themes, function(theme){
-			cImw.css(theme.url);
-			if(theme["default"])
-				domAttr.set(document.body, "class", theme.name);
-		});
-		array.map(data.css, function(file)
-		{
-			cImw.css(file);
-		});
-	}}).then(function(data)
-	{
-        var _menu=new cMenu({data:data.sections}).placeAt("menuPane").startup().createRecursiveMenu();
-        //var subMenu=new cMenu({data:data.sections, subMenus:false}).placeAt("leftPane").startup();
-	}).then(function(){
-		if(hash()==="")
-        	hash("home");
-        else
-        	hash(hash());
+require([
+	"dojo/_base/array",
+	"dojo/_base/window",
+	"dojo/on",
+	"dojo/dom-attr",
+	
+	"custom/imw",
+	"custom/menu",
+	"custom/parser",
+	
+	"configs/config",
+	"dojo/topic",
+	"configs/topics",
+	
+	"dojo/domReady!"
+],function(
+	array, win, on, domAttr,
+	cImw, cMenu, cParser,
+	config,	topic, Topics, router){
+    document.title=config.title;
+    
+    var Controller = {
+    	appConfig:config,
+    	parser : new cParser({config:config}, "contentPane")
+    };
+	array.forEach(config.themes, function(theme){
+		cImw.css(theme.url);
+		if(theme["default"]){
+			domAttr.set(document.body, "class", theme.name);
+		}
 	});
+	array.forEach(config.css, function(file)
+	{
+		cImw.css(file);
+	});
+    
+    Controller.menu = new cMenu({
+    	config:config.sections,
+    	appController:Controller
+    }).placeAt("menuPane").startup();
+	
 	on(win.global, "resize", function(obj){
         console.log(obj);
     });

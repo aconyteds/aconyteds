@@ -1,5 +1,4 @@
 @import "theme.less";
-@import "../font-awesome-4.1.0/less/font-awesome.less";
 
 .MenuNode{
     &:hover,&:focus{
@@ -7,7 +6,7 @@
         &:before{color:@headerText;}
     }
     ul.resMenu{
-        color:@hoverText;
+        color:@headerText;
         text-align:left;
         padding-left:5px;
         margin:0;
@@ -28,13 +27,29 @@
             line-height:25px;
             width:100%;
             padding: 3px 0 3px 5px;
-            border-width: 0  1px 1px 1px;
-            border-style:solid;
-            border-color:@highlightColor;
-            box-shadow: inset 0 10px 30px -6px @highlightColor;
-            -moz-box-shadow: inset 0 10px 30px -6px @highlightColor;
-            -webkit-box-shadow: inset 0 10px 30px -6px @highlightColor;
             box-sizing: border-box;
+            color:@headerText;
+            border:0 solid @highlightColor;
+            border-bottom-width:1px;
+            
+            &.Fitness, 
+            &.Fitness li{
+                border-left-color:@fitness-main-color;
+            }
+            &.Gaming,
+            &.Gaming li{
+                border-left-color:@gaming-main-color;
+            }
+            &.Wedding,
+            &.Wedding li{
+                border-left-color:@wedding-main-color;
+            }
+            
+            &.Home,
+            &.Home li{
+                border-left-color:@home-main-color;
+            }
+            
             &>span.flyout{
                 position:absolute;
                 right:0;
@@ -49,14 +64,10 @@
                 }
             }
             &:hover, &:focus{
+                @_offset:3px;
                 background:@headerBG;
-                box-shadow: inset 0 -10px 15px -6px @headerText;
-                -moz-box-shadow: inset 0 -10px 15px -6px @headerText;
-                -webkit-box-shadow: inset 0 -10px 15px -6px @headerText;
-                padding-bottom: 1px;
-                border-bottom-width:3px;
-                border-bottom-color:@headerText;
-                border-left-color:@headerText;
+                border-left-width:@_offset;
+                padding-left:5px - @_offset;
                 &>span{
                     color:@headerText;
                     text-shadow:none;
@@ -77,9 +88,8 @@
                 -webkit-transition: text-shadow .25s ease; /* Safari and Chrome */
                 transition: text-shadow .25s ease;
                 text-shadow: 0px 0px 10px @highlightColor;
-                background: -webkit-linear-gradient(  @hoverText, @headerText);
+                /*background: -webkit-linear-gradient(  @hoverText, @headerText);*/
                 -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         }
     }

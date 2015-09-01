@@ -1,9 +1,12 @@
+@import "../font-awesome-4.3.0/less/font-awesome.less";
+
 //Body Styles
-@bodyBG:#000000;
+@bodyBG:#300608;
 //Header Styles
-@headerBG:#000000;
+@headerBG:#222222;
+@highlightColor:#3F4142;
 @headerText:#FFF;
-@highlightColor:#00F;
+
 @hoverText:#3DC7F5;
 //Content Styles
 @contentBG:#000;
@@ -12,6 +15,18 @@
 //Text Styles
 @textColor:#FFF;
 @visitedColor:#A3BEC2;
+
+//Fitness Colors
+@fitness-main-color:#E01919;
+
+//Gaming Colors
+@gaming-main-color:#3B87D9;
+
+//Wedding Colors
+@wedding-main-color:#B0B524;
+
+//Home Colors
+@home-main-color:#23AB1F;
 
 .middleGradient (@outer, @inner){
     background: ~"@{inner}"; /* Old browsers */
@@ -32,4 +47,10 @@
     background: -ms-linear-gradient(top, ~"@{outer}" 0%,~"@{inner}" 100%); /* IE10+ */
     background: linear-gradient(to bottom, ~"@{outer}" 0%,~"@{inner}" 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{outer}', endColorstr='@{inner}',GradientType=1 ); /* IE6-9 */
+}
+
+.boxShadow (@1, @2, @3, @4, @color){
+    box-shadow: inset @1 @2 @3 @4 @color;
+    -moz-box-shadow: inset @1 @2 @3 @4 @color;
+    -webkit-box-shadow: inset @1 @2 @3 @4 @color;
 }
