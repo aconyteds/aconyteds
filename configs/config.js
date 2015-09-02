@@ -20,12 +20,12 @@ define([],
 				title: "Home",
 				hash: "Home",
 				menuClass:"Home"
-			}, {
-				src: "content/wedding",
-				title: "Wedding Info",
-				hash: "Wedding",
-				menuClass:"Wedding"
-			}, {
+			},{
+				src:"content/webdev",
+				title:"Web Development",
+				hash:"WebDevelopment",
+				menuClass:"Development"
+			},{
 				src: "content/gaming",
 				title: "Gaming",
 				hash: "Gaming",

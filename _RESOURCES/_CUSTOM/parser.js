@@ -32,7 +32,20 @@ function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Evented
             postCreate:function(data){
                 return this;
             }
-        })
+        }),
+        //WIP
+        templated:function(options){
+            var me=this;
+            require([options.requires], function(args){
+                lang.mixin(me, new declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin],{
+                    templateString:options.template,
+                    constructor:function(){
+                        
+                    }
+                }));
+                return;
+            });
+        }
     };
     
     var parserObj=declare([_WidgetBase, Evented],{
